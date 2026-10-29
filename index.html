@@ -18,7 +18,7 @@ button{cursor:pointer}
 .sbar{position:absolute;top:0;left:0;right:0;height:54px;display:flex;justify-content:space-between;align-items:center;padding:6px 32px 0 42px;font-size:16px;font-weight:700;z-index:80;background:#fff}
 .sbar .ic{display:flex;gap:6px;align-items:center}
 .homebar{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:#111;z-index:95}
-.app{position:absolute;top:54px;left:0;right:0;bottom:0;display:flex;flex-direction:column}
+.app{position:absolute;top:0;left:0;right:0;bottom:0;display:flex;flex-direction:column}
 .ah{height:52px;flex:none;display:flex;align-items:center;padding:0 18px;border-bottom:1px solid var(--line);gap:10px;background:#fff}
 .ah .logo{display:flex;align-items:baseline;gap:6px}
 .ah .logo b{font-size:22px;font-weight:900;color:var(--red);letter-spacing:-1px}
@@ -73,6 +73,7 @@ button{cursor:pointer}
 .btn.line-r{border-color:var(--red);color:var(--red)}
 .btn:disabled{opacity:.4}
 .btn2{display:grid;grid-template-columns:1fr 2fr;gap:8px}
+.home-quick{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}.home-quick .btn{width:100%;height:40px;min-height:40px;padding:0 8px;font-size:14px;line-height:1;display:flex;align-items:center;justify-content:center;white-space:nowrap}.home-quick .ico{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;margin-right:4px;font-size:11px;line-height:1}
 .bottom-cta{position:sticky;bottom:0;background:#fff;padding:12px 20px 14px;border-top:1px solid var(--line);margin-top:16px;z-index:5}
 .fld{margin:16px 0 0}
 .fld>label,.fld .lb{display:block;font-size:13px;font-weight:700;color:#444;margin-bottom:7px}
@@ -165,7 +166,7 @@ textarea.inp{height:auto;padding:10px 12px;resize:none}
 .dim.on{opacity:1;pointer-events:auto}
 .sheet{position:absolute;left:0;right:0;bottom:0;background:#fff;z-index:70;max-height:86%;display:flex;flex-direction:column;transform:translateY(105%);transition:transform .25s ease;border-radius:18px 18px 0 0;padding-bottom:30px}
 .sheet.on{transform:none}
-.sheet.full{top:54px;max-height:none;border-radius:0}
+.sheet.full{top:0;max-height:none;border-radius:0}
 .sheet .grab{width:40px;height:5px;border-radius:3px;background:#d4d4d4;margin:8px auto 2px;flex:none}
 .sheet .sh{display:flex;align-items:center;padding:10px 20px 12px;border-bottom:1px solid var(--line);flex:none}
 .sheet .sh h3{margin:0;font-size:17px;flex:1}
@@ -187,7 +188,7 @@ textarea.inp{height:auto;padding:10px 12px;resize:none}
 .cbx{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;line-height:1.5;padding:12px 0}
 .cbx input{width:20px;height:20px;flex:none;accent-color:var(--red);margin:1px 0 0}
 /* mask editor */
-.medit{position:absolute;inset:0;background:#111;z-index:85;display:flex;flex-direction:column;padding:54px 0 30px}
+.medit{position:absolute;inset:0;background:#111;z-index:85;display:flex;flex-direction:column;padding:0 0 30px}
 .medit .mt{color:#fff;display:flex;align-items:center;padding:10px 16px;gap:10px}
 .medit .mt b{flex:1;text-align:center;font-size:16px}
 .medit .mt button{border:0;background:none;color:#fff;font-size:15px}
@@ -222,8 +223,8 @@ textarea.inp{height:auto;padding:10px 12px;resize:none}
 <body>
 <div class="stage">
  <div class="phone" id="phone">
-  <div class="island" aria-hidden="true"></div>
-  <div class="sbar" aria-hidden="true"><span>9:41</span><span class="ic"><svg width="18" height="12" viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg width="16" height="12" viewBox="0 0 16 12"><path d="M8 2.5c2.3 0 4.4.9 6 2.4l1.2-1.3A10.4 10.4 0 0 0 8 .7 10.4 10.4 0 0 0 .8 3.6L2 4.9a8.6 8.6 0 0 1 6-2.4Zm0 3.6c1.3 0 2.5.5 3.4 1.3l1.2-1.3A6.6 6.6 0 0 0 8 4.3a6.6 6.6 0 0 0-4.6 1.8l1.2 1.3A4.8 4.8 0 0 1 8 6.1Zm0 3.6-1.9 2 1.9 2 1.9-2Z"/></svg><svg width="27" height="13" viewBox="0 0 27 13"><rect x=".5" y=".5" width="23" height="12" rx="3.5" fill="none" stroke="#999"/><rect x="2" y="2" width="18" height="9" rx="2"/><rect x="25" y="4.5" width="1.6" height="4" rx=".8" fill="#999"/></svg></span></div>
+
+
   <div class="app">
    <header class="ah" id="ah"></header>
    <main class="scr" id="scr"></main>
@@ -252,10 +253,10 @@ const ME=BOOT?BOOT.me:{name:'김도현',co:'화재',type:'임원',pid:'A-1001'};
 const BROKERS=[['가람증권','#E8231B'],['새솔투자증권','#0A8CA3'],['한결증권','#2F6FD6'],['바른투자증권','#2F8F5B'],['다온증권','#7A4FD0'],['미르증권','#D97706'],['누리증권','#C2185B'],['하늘투자증권','#00838F'],['기타','#8a8a8a']];
 const BC=Object.fromEntries(BROKERS);
 const TYPES=['위탁','ISA','연금저축','CMA','기타'];
-const STOCKS=[['100010','가온전자'],['100020','한빛바이오'],['100030','누리모빌리티'],['100040','다온화학'],['100050','바름에너지'],['100060','새벽소프트'],['200010','미래반도체'],['200020','청솔식품'],['200030','하람건설'],['200040','소담제약'],['200050','푸른통신'],['200060','온새미로봇'],['200070','라온엔터'],['200080','해솔조선'],['200090','다솜리츠']];
+const STOCKS=[['100010','가온전자'],['100020','한빛바이오'],['100030','누리모빌리티'],['100040','다온화학'],['100050','바름에너지'],['100060','새벽소프트'],['200010','미래반도체'],['200020','청솔식품'],['200030','하람건설'],['200040','소담제약'],['200050','푸른통신'],['200060','온새미로봇'],['200070','라온엔터'],['200080','해솔조선'],['200090','다솜리츠'],['300010','대한정밀'],['300020','새길모빌리티'],['300030','하나로전자'],['300040','푸른제약'],['300050','진명건설'],['300060','소담식품'],['300070','늘봄헬스'],['300080','동방해운'],['300090','가람전기'],['300100','나래게임즈'],['300110','태성기계'],['300120','초록에너지']];
 const SN=Object.fromEntries(STOCKS);
 if(BOOT)BOOT.stocks.forEach(([c,n])=>{if(!SN[c]){STOCKS.push([c,n]);SN[c]=n}});
-const RS=BOOT?BOOT.rs:[{code:'100050',from:'2026-10-10',to:'2026-12-31'},{code:'100040',from:'2026-07-01',to:'2026-10-15'}];
+const RS=BOOT?BOOT.rs:[{code:'100050',from:'2026-10-10',to:'2026-12-31'},{code:'300010',from:'2026-09-08',to:'2026-12-31'},{code:'300030',from:'2026-09-22',to:'2026-12-31'},{code:'300070',from:'2026-10-01',to:'2026-11-30'},{code:'300110',from:'2026-09-15',to:'2026-12-31'},{code:'100040',from:'2026-07-01',to:'2026-10-15'}];
 let D;
 function seedDemo(){
  D={
@@ -269,9 +270,19 @@ function seedDemo(){
    {id:'T3',acct:'A1',date:'2026-10-16',side:'매수',code:'100050',qty:100,price:15200,up:'2026-10-16',ev:['mock'],st:'등록',reason:''},
    {id:'T4',acct:'A1',date:'2026-10-21',side:'매수',code:'200060',qty:20,price:41800,up:'2026-10-21',ev:['mock'],st:'등록',reason:''},
    {id:'T5',acct:'A1',date:'2026-10-21',side:'매도',code:'200010',qty:20,price:86100,up:'2026-10-21',ev:['mock'],st:'등록',reason:''},
-   {id:'T6',acct:'A2',date:'2026-09-24',side:'매수',code:'200030',qty:40,price:12900,up:'2026-09-24',ev:['mock'],st:'등록',reason:''}
+   {id:'T6',acct:'A2',date:'2026-09-24',side:'매수',code:'200030',qty:40,price:12900,up:'2026-09-24',ev:['mock'],st:'등록',reason:''},
+   {id:'T7',acct:'A1',date:'2026-10-20',side:'매수',code:'300010',qty:35,price:24700,up:'2026-10-20',ev:['mock'],st:'등록',reason:''},
+   {id:'T8',acct:'A2',date:'2026-10-18',side:'매도',code:'300020',qty:60,price:18200,up:'2026-10-19',ev:['mock'],st:'등록',reason:''},
+   {id:'T9',acct:'A1',date:'2026-10-15',side:'매수',code:'300030',qty:85,price:33100,up:'2026-10-15',ev:['mock'],st:'등록',reason:''},
+   {id:'T10',acct:'A2',date:'2026-10-13',side:'매수',code:'300070',qty:45,price:12600,up:'2026-10-13',ev:[],st:'등록',reason:''},
+   {id:'T11',acct:'A1',date:'2026-10-10',side:'매도',code:'300050',qty:20,price:52800,up:'2026-10-12',ev:['mock'],st:'등록',reason:''},
+   {id:'T12',acct:'A1',date:'2026-10-06',side:'매수',code:'300110',qty:120,price:9400,up:'2026-10-06',ev:['mock'],st:'등록',reason:''},
+   {id:'T13',acct:'A2',date:'2026-09-30',side:'매도',code:'300040',qty:25,price:43600,up:'2026-10-01',ev:['mock'],st:'등록',reason:''},
+   {id:'T14',acct:'A1',date:'2026-09-18',side:'매수',code:'300080',qty:70,price:15800,up:'2026-09-18',ev:['mock'],st:'등록',reason:''},
+   {id:'T15',acct:'A2',date:'2026-09-11',side:'매수',code:'300090',qty:55,price:21100,up:'2026-09-11',ev:[],st:'등록',reason:''},
+   {id:'T16',acct:'A1',date:'2026-08-27',side:'매도',code:'300060',qty:30,price:17300,up:'2026-08-28',ev:['mock'],st:'등록',reason:''}
   ],
-  seq:6,aseq:2,lastAcct:'A1'
+  seq:16,aseq:2,lastAcct:'A1'
  };
 }
 const tkey=t=>t.date+'|'+t.code+'|'+t.qty;
@@ -335,7 +346,13 @@ const ICON_DOC=`<svg width="78" height="78" viewBox="0 0 92 92" fill="none" stro
 /* =============== 화면 렌더 =============== */
 const TITLES={home:'',accts:'계좌 관리',accForm:'계좌 등록',trade:'거래내역 등록',done:'등록 완료',hist:'거래내역',req:'소명·동의 요청'};
 /* v1.2 준법감시부서 요청(소명요구·정보제공 동의) — 웹(준법감시 시스템)과 연계 */
-let REQ=BOOT&&BOOT.reqs?BOOT.reqs:[];
+let REQ=BOOT&&BOOT.reqs?BOOT.reqs:[
+ {cid:'AL-101',title:'대한정밀 매수 35주',date:'2026-10-20',rno:'RCV-26-0101',st:'소명요청',why:'매매 제한종목 거래 확인',q:['거래경위','투자판단 근거','정보취득 여부'],docs:['거래경위서','공개정보·리서치 출처'],due:'2026-10-25',over:false,supp:'',memo:'',exp:null,extReq:false,canExp:true,vc:null,canAdd:false},
+ {cid:'AL-102',title:'하나로전자 매수 85주',date:'2026-10-15',rno:'RCV-26-0102',st:'소명요청',why:'정보접근 이력과 거래시점 근접',q:['거래경위','정보취득 여부'],docs:['거래경위서'],due:'2026-10-21',over:true,supp:'추가 거래근거 확인 필요',memo:'',exp:null,extReq:false,canExp:true,vc:null,canAdd:false},
+ {cid:'AL-103',title:'늘봄헬스 매수 45주',date:'2026-10-13',rno:'RCV-26-0103',st:'소명제출',why:'반복거래 패턴 확인',q:['거래경위'],docs:['거래경위서'],due:'2026-10-20',over:false,supp:'',memo:'',exp:{dt:'2026-10-18',ans:{'거래경위':'공개정보 참고 개인투자'}},extReq:false,canExp:false,vc:{st:'요청',pur:'거래경위 사실관계 확인',docs:['거래내역 증빙'],to:'준법감시부서',until:'2026-11-30',acc:'담당자만 접근',alt:'대면 확인',log:[['2026-10-20','요청']]},canAdd:false},
+ {cid:'AL-104',title:'태성기계 매수 120주',date:'2026-10-06',rno:'RCV-26-0104',st:'검토중',why:'등록 거래 규모 급증',q:['투자판단 근거'],docs:['공개정보·리서치 출처'],due:'2026-10-16',over:false,supp:'',memo:'',exp:{dt:'2026-10-14',ans:{'투자판단 근거':'공개 리서치 참고'}},extReq:false,canExp:false,vc:null,canAdd:false},
+ {cid:'AL-105',title:'푸른제약 매도 25주',date:'2026-09-30',rno:'RCV-26-0105',st:'종결',why:'이벤트 인접 거래 확인',q:['거래경위'],docs:[],due:'2026-10-07',over:false,supp:'',memo:'공개정보 기반 거래로 확인',exp:{dt:'2026-10-04',ans:{'거래경위':'공시 확인 후 매도'}},extReq:false,canExp:false,vc:null,canAdd:false}
+];
 const reqTodo=r=>r.canExp||(r.vc&&r.vc.st==='요청');
 window.addEventListener('message',e=>{const m=e.data;if(m&&m.src==='web'&&m.type==='reqs'){REQ=m.reqs||[];closeSheet();render(true);if(m.msg)toast(m.msg)}});
 function header(){
@@ -371,7 +388,7 @@ SCR.home=()=>{
  <p class="big">${today?`오늘 ${today}건 등록했어요`:'오늘 매매가 있었다면<br>지금 등록해 주세요'}</p>
  <p class="muted">매매일로부터 영업일 기준 ${DUE}일이 지나면 누락으로 처리됩니다</p></div>${ICON_DOC}</div>
  <div style="margin-top:16px"><button class="btn red" type="button" data-tab="trade">+ 거래내역 등록</button></div>
- <div style="display:flex;gap:8px;margin-top:8px"><button class="btn sm" type="button" data-act="quickCap" style="flex:1">▣ 캡쳐로 바로 등록</button><button class="btn sm" type="button" data-act="openRs" style="flex:1">매매 제한종목 ${myRs.length}</button></div></div>
+ <div class="home-quick"><button class="btn" type="button" data-act="quickCap"><span class="ico">▣</span><span>캡쳐로 바로 등록</span></button><button class="btn" type="button" data-act="openRs"><span>매매 제한종목 ${myRs.length}</span></button></div></div></div>
  <div class="sec">${'<h3 class="sec-t"><span>이번 달 현황</span><small>'+TODAY.slice(0,7).replace('-','년 ')+'월</small></h3>'}
  <div class="summary" style="border-top:0;margin:0"><div><p>등록</p><b>${mon.length}</b></div><div><p>누락</p><b style="color:${late?'var(--red)':'inherit'}">${late}</b></div><div><p>증빙 미첨부</p><b style="color:${noEv?'var(--red)':'inherit'}">${noEv}</b></div></div>
  <ul class="rows" style="margin-top:6px">
